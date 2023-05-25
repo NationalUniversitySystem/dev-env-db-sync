@@ -49,6 +49,7 @@ async function rewriteSql(inputFilePath, outputFilePath) {
       skipTable = true;
     } else if (/^INSERT INTO `_pantheon_heartbeat`/.test(line)) {
       // Skip insert statements for _pantheon_heartbeat table
+	  console.log("Dropping _pantheon_heartbeat table...");
     } else {
       output.write(`${line}\n`);
     }
